@@ -1,0 +1,7 @@
+FROM alpine:3.14
+RUN apt-get update && apt-get install -y curl && apt-get install python3
+COPY requirements.txt /app/
+RUN pip3 install -r /app/requirements.txt
+COPY *.py /app/
+
+ENTRYPOINT ["python3", "/app/main.py"]
