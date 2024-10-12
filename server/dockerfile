@@ -1,7 +1,7 @@
-FROM alpine:3.14
-RUN apt-get update && apt-get install -y curl && apt-get install python3
+FROM ubuntu:mantic
+RUN apt-get update && apt-get install -y curl && apt-get install -y python3-pip
 COPY requirements.txt /app/
-RUN pip3 install -r /app/requirements.txt
+RUN pip3 install -r /app/requirements.txt --break-system-packages
 COPY *.py /app/
-
-ENTRYPOINT ["python3", "/app/main.py"]
+WORKDIR /app
+ENTRYPOINT ["fastapi", "run", "backend.py", "--port", "8000"]

@@ -2,7 +2,7 @@ services:
   server:
     build: ./server
     ports:
-      - "8000:8000"
+      - 8000:8000
     environment:
       - HUGGINGFACE_ACCESS_TOKEN=12345
       - OPENAI_API_KEY=
