@@ -4,4 +4,6 @@ services:
     ports:
       - "8000:8000"
     environment:
+      - HUGGINGFACE_ACCESS_TOKEN=12345
+      - OPENAI_API_KEY=
       - API_KEY=123456
