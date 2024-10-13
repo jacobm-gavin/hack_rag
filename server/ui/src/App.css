@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -14,7 +14,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,8 +21,70 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-color: #282c34;;
 }
+.App-header-new{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  animation: Color-change 2s;
+  background-color: #403e3a;
+}
+.Prompt{
+  animation: Fade-in 3s;
+}
+.Prompt-new{
+  animation: Fade-out 2s;
+  opacity: 0;
+}
+.Context-prompt{
 
+}
+.Context-prompt-new{
+  
+}
+.Context-prov{
+
+}
+.Context-prov-new{
+
+}
+.Question{
+  animation: Fade-in 3s;
+}
+.Question-new{
+  animation: Question-move 2s;
+  position:absolute;
+    bottom: 46px;
+    left: 16px;
+  height: 30px;
+  width: 1400px;
+  border-radius: 10px;
+}
+.Submit{
+  animation: Fade-in 3s;
+}
+.Submit-new{
+  position:absolute;
+    bottom: 16px;
+    right: 20px;
+    width: 85px;
+    height: 60px;
+  border-radius: 8px;
+}
+.Answer{
+  animation: Fade-in 3s;
+}
+.Css-answer-new{
+  position:absolute;
+    bottom: 30px;
+    left: 20px;
+  min-height: 30px;
+
+
+}
 .App-link {
   color: #61dafb;
 }
@@ -34,5 +95,44 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes Fade-in {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes Fade-out {
+  from{
+    opacity:1
+  }
+  to{
+    opacity:0
+  }
+  
+}
+
+@keyframes Color-change {
+  from{
+    background-color: #282c34;
+  }
+  to{
+    background-color: #403e3a;
+  }
+}
+
+@keyframes Question-move {
+  from{
+    position:center;
+  }
+  to{
+    position:absolute;
+    bottom: 8px;
+    left: 8px;
   }
 }
