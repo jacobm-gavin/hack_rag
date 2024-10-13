@@ -2,6 +2,7 @@ FROM ubuntu:mantic
 RUN apt-get update && apt-get install -y curl && apt-get install -y python3-pip
 COPY requirements.txt /app/
 RUN pip3 install -r /app/requirements.txt --break-system-packages
+COPY ui/build /app/ui/build
 COPY *.py /app/
 WORKDIR /app
 ENTRYPOINT ["fastapi", "run", "backend.py", "--port", "8000"]

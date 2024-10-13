@@ -4,3 +4,4 @@ pydantic
 uvicorn
 transformers
 embedchain
+starlette
